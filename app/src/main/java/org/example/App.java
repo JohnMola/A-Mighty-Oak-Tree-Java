@@ -10,5 +10,20 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        Squirrel cheeks = new Squirrel("Cheeks");
+        Node<Squirrel> nodeOne = new Node<>(cheeks);
+
+        Squirrel squeaks = new Squirrel("Squeaks");
+        Node<Squirrel> nodeTwo = new Node<>(squeaks);
+
+        Squirrel fluffybutt = new Squirrel("Mr. Fluffy Butt");
+        Node<Squirrel> nodeThree = new Node<>(fluffybutt);
+
+        nodeOne.setLeft(nodeTwo);
+        nodeOne.setRight(nodeThree);
+
+        Node<Squirrel> retrievedLeft = nodeOne.left();
+        Node<Squirrel> retrievedRight = nodeOne.right();
     }
 }
